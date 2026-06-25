@@ -970,35 +970,6 @@ function SettingsTab({adminPw,setAdminPw,data,setData}){
           </div>
         ))}
       </div>
-      <div className="h2l">Admin Password</div>
-      <div className="card">
-        <input className="login-in" type="password" placeholder="Current password" value={cur} onChange={e=>setCur(e.target.value)}/>
-        <input className="login-in" type="password" placeholder="New password (min 6 chars)" value={n1} onChange={e=>setN1(e.target.value)}/>
-        <input className="login-in" type="password" placeholder="Confirm new password" value={n2} onChange={e=>setN2(e.target.value)}/>
-        <button className="cta2" onClick={changePw}>Change Password</button>
-        {pwMsg&&<div className={pwMsg.startsWith("v")?"okmsg":"errmsg"} style={{marginTop:8}}>{pwMsg}</div>}
-        <div className="notebox" style={{marginTop:8}}>Password is stored on this device. Protects Settings and upload access. Default: vm2026</div>
-      </div>
-
-      <div className="h2l">Month End Instructions</div>
-      <div className="card">
-        {[
-          ["1","Receive the monthly ICT Availability Excel file from the ICT team."],
-          ["2","Verify the file contains four sheets: Summary, Application Availability, Infrastructure Availability, and Network Availability."],
-          ["3","Do not rename or reformat the file — upload it as received."],
-          ["4","Tap Upload Monthly File above and select the file."],
-          ["5","Confirm the success message showing the new period has been added."],
-          ["6","Check the Overview tab to verify the new month appears in the trend."],
-          ["7","Share the updated app link with stakeholders or notify ICT to redeploy if hosted on Azure."],
-        ].map(([n,txt])=>(
-          <div key={n} style={{display:"flex",gap:12,padding:"10px 0",borderBottom:n!=="7"?"1px solid var(--line)":"none",alignItems:"flex-start"}}>
-            <div style={{width:24,height:24,borderRadius:99,background:"var(--red)",color:"#fff",
-              fontFamily:"Sora",fontWeight:700,fontSize:11,display:"flex",alignItems:"center",
-              justifyContent:"center",flexShrink:0,marginTop:1}}>{n}</div>
-            <span style={{fontSize:13,lineHeight:1.5,color:"#4A403C"}}>{txt}</span>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
